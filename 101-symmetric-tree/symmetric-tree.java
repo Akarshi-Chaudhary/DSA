@@ -19,7 +19,7 @@ class Solution {
         if(root == null) return true;
         return isSame(root.left, root.right);
     }
-    public boolean isSame(TreeNode left, TreeNode right){
+    private boolean isSame(TreeNode left, TreeNode right){
 
         if(right == null && left == null) return true;
         if(right == null || left == null) return false;
