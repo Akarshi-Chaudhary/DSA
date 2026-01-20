@@ -6,10 +6,13 @@ class Solution {
             map.put(nums[i], i);
         }
 
-        for (int i = 0; i < operations.length; i++) {
-            int oldValue = operations[i][0];
-            int newValue = operations[i][1];
-
+        // for (int i = 0; i < operations.length; i++) {
+        //     int oldValue = operations[i][0];
+        //     int newValue = operations[i][1];
+            for(int[] op : operations){
+                int oldValue = op[0];
+                int newValue = op[1];
+        
             int index = map.get(oldValue);
             nums[index] = newValue;
 
