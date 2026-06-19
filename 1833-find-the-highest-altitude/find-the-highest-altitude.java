@@ -1,20 +1,34 @@
+// class Solution {
+//     public int largestAltitude(int[] gain) {
+//         int n = gain.length;
+//         int[] arr = new int[n + 1];
+//         arr[0] = 0;
+//         int prefixSum = 0;
+//         int maxSum = 0;
+
+//         for(int i =  0; i < n; i++){
+//             prefixSum += gain[i];
+//             for(int j = 1; j < arr.length; j++){
+
+//                 arr[j] = prefixSum;
+//                 maxSum = Math.max(prefixSum, maxSum);
+//             }
+//         }
+//         return maxSum;
+
+//     }
+// }
+
 class Solution {
-    public int largestAltitude(int[] gain) {
-        int n = gain.length;
-        int[] arr = new int[n + 1];
-        arr[0] = 0;
-        int prefixSum = 0;
+    public int largestAltitude(int[] gain){
         int maxSum = 0;
-
-        for(int i =  0; i < n; i++){
-            prefixSum += gain[i];
-            for(int j = 1; j < arr.length; j++){
-
-                arr[j] = prefixSum;
-                maxSum = Math.max(prefixSum, maxSum);
-            }
+        int sum = 0;
+       
+        for(int i = 0; i < gain.length ; i++){
+            maxSum += gain[i];  
+            sum = Math.max(sum, maxSum);
+            
         }
-        return maxSum;
-
+        return sum;
     }
 }
