@@ -44,20 +44,32 @@
 
 class Solution{
     public int lengthOfLongestSubstring(String s){
+
+         // Store last seen index of every ASCII character
         int[] lastIndex = new int[128];
+
+         // Initially, no character has been seen
         Arrays.fill(lastIndex, -1);
 
+         // Start of current window
         int left = 0;
+          // Best answer
         int maxlen = 0;
 
+         // Scan the string
         for(int right = 0; right < s.length(); right++){
             char ch = s.charAt(right);
 
+            // Seen inside current window?
             if(lastIndex[ch] >= left){
                 left = lastIndex[ch] + 1;
             }
+
+              // Update latest position
             lastIndex[ch] = right;
 
+
+            // Update answer
             maxlen = Math.max(maxlen, right - left + 1);
         }
         return maxlen;
