@@ -25,3 +25,6 @@ class Solution {
         reverse(nums, k, nums.length - 1);
     }
 }
+
+
+//cyclic approch 
