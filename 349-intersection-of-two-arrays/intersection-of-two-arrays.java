@@ -31,12 +31,9 @@
 
 
 class Solution {
-
-    public int[] intersection(int[] nums1, int[] nums2) {
-        
+    public int[] intersection(int[] nums1, int[] nums2) {   
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
-
         for(int num : nums1){
             set1.add(num);
         }
@@ -62,7 +59,7 @@ class Solution {
             return Arrays.copyOfRange(ans, 0 , k);
 
         }
-        
+
         else
         {
 
@@ -83,3 +80,6 @@ class Solution {
 
     }
 }
+
+
+//"I store unique elements of both arrays in HashSets. Then I iterate through the smaller set and check membership in the larger set using contains(), which takes O(1) average time."
