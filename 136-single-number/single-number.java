@@ -10,8 +10,12 @@ class Solution {
            map.put(num, map.get(num) + 1);
         } 
 
-        for(int i = 0; i < nums.length; i++){
-            if(map.get(nums[i]) == 1) return nums[i];
+        // for(int i = 0; i < nums.length; i++){
+        //     if(map.get(nums[i]) == 1) return nums[i];
+        // }
+
+        for(int num : nums){
+            if(map.get(num) == 1) return num;
         }
 
         return -1;
